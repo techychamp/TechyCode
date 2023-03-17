@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src='jquery-3.2.1.min.js'>
+	</script>
+	<style>
+	body{
+	margin:0px 0px;}
+	#navbar{
+		display:flex;
+		flex-direction:row-reverse;
+		flex-wrap:wrap;
+		background-color:black;
+		margin:0px;
+		padding:0px;
+	}
+	#navbar>li:not(#spacer){
+	flex:1;
+	list-style-type:none;
+		color:white;
+		padding:20px;
+		text-align:center;
+		height:content;
+	}
+	#spacer{
+	flex:3!important;
+	}
+	.drp-btn:hover .drp-cnt{
+		display:flex;
+		flex-direction:column;
+	}
+	.drp-cnt{
+		min-width:140px;
+		z-index:1;
+		min-height:40px;
+		background-color:white;
+		color:black;
+		box-shadow:1px 1px 10px 1px ;
+		position:absolute;
+		display:none;
+	}
+	.drp-cnt>*:hover{
+			background-color:skyblue;
+		color:white;
+		cursor:pointer;
+	}
+	.drp-btn{
+	display:inline-table;
+	position:relative;
+	}.drp-cnt>*{
+		padding:7px 16px;
+		
+	}
+	#slider{
+	background-image:url("1.jpg");
+	background-size:cover;
+		background-position:center;
+		background-repeat:no-repeat;
+    min-width: 100%;
+    min-height: 400px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	}
+	#slider>div{
+	flex:8;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	width:100%;
+	}
+	#slider>div>span{
+	flex:6;}
+	#slider>div>button{
+	flex:1;
+	max-width:60px;
+	max-height:60px;
+	min-height:40px;
+	min-width:30px;
+	font-size:3em;
+	background-color:transparent;
+	border:none;
+	color:white;
+	outline:0px;
+	}
+	#slider>span>button{
+	width:1.5em;
+	height:1.5em;
+	border-radius:50%;
+	border:2px solid grey;
+	background-color:transparent;
+	outline:0px;
+	margin:5px;
+	}
+	#slider>span{
+	flex:1;
+	}
+	</style>
+	</head>
+	<body>
+		<ul id='navbar'>
+			<li class='drp-btn'>Sign Up/Sign In<div class='drp-cnt'>
+				<span>As Client</span>
+				<span>As Member</span>
+			</div></li>
+			<li>Contact Us</li>
+			<li>About US</li>
+			<li>Our Samples</li>
+			<li>Home</li>
+			<li id='spacer' ></li>
+			<li><img></img></li>
+		</ul>
+<div id="slider">
+<h1 style='flex:1;max-height:0px;'>header</h1>
+<div ><button id='prev'><</button><span></span><button id='next'>></button></div>
+<span id='slider-tab'><button class="slider-image" imag='1.jpg' heading='slide1'></button><button class="slider-image" imag='2.jpg' heading='slide2'></button><button class="slider-image" imag='3.jpg' heading='slide3'></button></span>
+</div>
+<script>
+$(document).ready(function(){
+var time=setTimeout("$('#slider-tab>button:first').click();",10);
+$('#slider-tab>button').click(function(){
+	window.clearTimeout(time);
+	$('.slider-image').removeClass('active');
+	$(this).addClass('active');
+	$('#slider>h1').text($(this).attr('heading'));
+	$('#slider').css({'background-image':'url("'+$(this).attr('imag')+'")'});
+	time=setTimeout("$('#next').click();",2000);
+});
+	$('#next').click(function(){
+	tag=$('.active').next();
+		if($('.active').attr('class') == $('#slider-tab>button:last').attr('class')){
+			tag=$('#slider-tab>button:first');
+		}
+		$(tag).click();
+	});
+	$('#prev').click(function(){
+	tag=$('.active').prev();
+		if($('.active').attr('class') == $('#slider-tab>button:first').attr('class')){
+			tag=$('#slider-tab>button:last');
+		}
+		$(tag).click();
+	});
+});
+</script>
+	</body>
+</html>

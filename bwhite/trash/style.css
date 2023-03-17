@@ -1,0 +1,120 @@
+.tab{
+    grid-column-end:span 4;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    box-shadow: 0px 0px 10px 1px grey;
+    }
+    #content1{
+        display:none;
+        background-color:white;
+    }
+    .tab>p{
+    width:75%;
+    margin-left:1%
+    }
+    .tab>span{
+    width:25%}
+    .tab>span>img{
+    width:100%;
+    height:auto;
+    }
+    #navbar>img{width:130px;height:40px;}
+    .content>*{padding:21px 30px;user-select:none;}
+    .but{
+    display:inline-table;
+    position:relative;}
+    .nav-collapse{
+    display:none;
+    }
+    
+    .content{
+    
+    color:chocolate;
+        flex-direction:row-reverse;
+        align-items:center;}
+    #navbar{
+        flex-direction:row;
+        align-items:center;
+        position:fixed;
+        display:table;
+        background-color: rgba(255,255,255,1);
+        box-shadow: 0px 2px 10px 0.5px grey;
+    }
+    #navbar,.content,#header{
+        grid-column:1/span 13;
+        display:flex;
+        height:60px;
+        width:100%;
+    }
+    #content1>*{
+    padding:20px;
+    }
+    body{
+        margin:0px;
+        display:grid;
+        grid-gap:5px;
+        grid-template-columns:auto auto;
+    }
+    #navbar>.content>a:hover:not(.active),#content1>a:hover:not(.active){
+        color:white;
+        background:linear-gradient(30deg,rgb(82, 139, 224),rgb(218, 49, 147));
+        box-shadow: 0px 0px 10px 0.3px rgba(10,10,10,0.3);
+        }
+    .active{
+        color:white;
+        background:rgba(9, 120, 134,0.6);
+        box-shadow: 0px 0px 10px 0.3px rgba(10,10,10,0.3);
+    }    
+    #content1>a{
+    user-select:none;
+    text-align:center;
+    color:rgb(221, 137, 76);
+        width:100%;
+    }	
+    @media screen and (max-width:865px){
+        .nav-collapse:active #content1, #content1:hover {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        position:absolute;
+        overflow:hidden;
+        box-shadow: 0px 0px 10px 1px rgb(209, 200, 200);
+        top:0;
+        right:0;
+        padding-bottom:20px;
+        }
+        .tab{
+        grid-column-end:span 6;
+        
+        }
+        .nav-collapse{
+        display:inline-block;
+        }
+        .but{
+        
+        width:21px;
+        max-height:21px;
+        height:21px;
+        
+        }
+        #content1:hover>.close:active{
+        display:none;
+        }
+        .close{
+        
+        width:90%;
+        max-height:21px;
+        height:21px;
+        
+        }
+        #navbar>.content>a{
+        display:none;
+        }
+    }
+    @media screen and (max-width:545px){
+        .tab{
+            grid-column-end:span 12;
+            
+            }
+    }

@@ -1,0 +1,115 @@
+﻿body>span{
+	display:block;
+}
+#tab1{
+	box-shadow: 0px 0px 10px 1px grey;
+	display: block;
+}
+#tab1>p{
+	float:right;
+}#tab1>span{
+	float:left;
+	min-width:100px;
+}
+body{
+	display:contents;
+}
+#navbar{
+	max-height:60px;
+	min-width: 100%;
+    height: 10%;
+	top:0;
+	align-self:initial;
+	position:relative;
+	display:table;
+	min-height:60px;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0px 2px 10px 0.5px grey;
+}
+#navbar>#aligner {
+	width:100%;
+	height:34.2%;
+	display:block;
+}
+#content{
+	float:right;
+	margin-right:3%;
+	min-width:55%;
+	max-width:-webkit-fill-available;
+}#content>a{
+	text-decoration:none;
+	font-weight:400;
+	color:chocolate;
+	margin-left:5%;
+	transition:color 1s;
+}a:hover{
+	color: brown;
+	transition:color 1s;
+}#content>*{
+	float:right;
+}svg{
+	display:none;
+	width:30px;height:20px;
+}.nav-collapse{
+	min-width:180px;
+	width: 45%;
+    max-height:-webkit-fill-available;
+	float:right;
+	right:0;
+	top:0;
+	position:fixed;
+	min-height:50px;
+    background-color: white;
+    box-shadow: -1px 0px 10px 0.5px grey;
+	display:none;
+	min-height: -webkit-fill-available;
+}#content1{
+	width:-webkit-fill-available;
+	margin:auto;
+	display:inline-grid;
+	min-height:100%;
+	margin-bottom:auto;
+}#content1>a{
+	text-decoration:none;
+	font-weight:400;
+	color:chocolate;
+	margin-left:5%;
+	margin-right:5%;
+	transition:color 1s;
+	text-align:center;
+	padding-bottom:3%;
+	padding-top:3%;
+}#content1>a:hover{
+	background-color:burlywood;
+	cursor:pointer;
+}#content1>#aligner{
+	min-width:-webkit-fill-available;
+	min-height:50px;
+	max-height:10%;
+	
+}
+@media screen and (min-width:826px){
+	.nav-collapse{
+		display:none;
+	}
+}
+@media screen and (max-width:825px){
+	#content>a{
+		display:none;
+	}svg{
+		display:block;
+	}
+	#content>svg{
+		transform:scale(1.3,1.3);
+	}#aligner>svg{
+		transform:scale(1.3,1.3);
+		margin-left:2%;
+		margin-top:2%;
+	}
+	.nav-collapse{
+	align-self: end;
+    margin-left: auto;
+    float: right;
+    min-height: -webkit-fill-available;
+}
+}
